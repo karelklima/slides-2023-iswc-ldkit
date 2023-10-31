@@ -2,13 +2,51 @@
 <html lang="en">
 
 <head>
-  <title>Shower Presentation Engine</title>
+  <title>LDkit</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
   <style>
+    body {
+      background-color: white;
+    }
+
     .shower {
       --slide-ratio: calc(16 / 9);
+      --progress-size: 0;
+      --ribbon-size: 0;
+      --color-blue: #991b1b;
+
+      font: 30px/2 'PT Sans', sans-serif;
+
+      font: 30px/2 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .shower.list {
+      background: #FFF;
+    }
+
+    .caption {
+      color: black;
+      text-shadow: none;
+    }
+
+    .caption .title {
+      font-size: 50px/2;
+      font-weight: 700;
+    }
+
+    .big {
+      font-size: 90px;
+      margin: 0;
+    }
+
+    .subtitle {
+      font-weight: bold;
     }
   </style>
 </head>
@@ -17,12 +55,113 @@
 
   <header class="caption">
     <h1>LDkit: Linked Data Object Graph Mapping toolkit for Web Applications</h1>
-    <p>Yours Truly, Famous Inc. Test test test</p>
+    <p>Karel Klíma, Ruben Taelman, Martin Nečaský</p>
   </header>
 
+  <section class="slide center">
+    <h1 class="big">LDkit</h1>
+    <p class="subtitle">Linked Data Object Graph Mapping toolkit<br /> for Web Applications</p>
+    <p>Karel Klíma, ISWC 2023</p>
+  </section>
+
   <section class="slide">
-    <!-- Create your first slide -->
-    <h1>LDkit: Linked Data Object Graph Mapping toolkit for Web Applications</h1>
+    <h1>Why TypeScript won</h1>
+    <p>Static types?<br />
+      Safer refactoring?<br />
+      Improved readability and maintainability?
+    </p>
+    <p class="next"><strong>Language Server Protocol</strong></p>
+  </section>
+
+  <section class="slide">
+    <h1>Language Server Protocol</h1>
+    <ul>
+      <li>Developed by Microsoft, open-sourced in 2016</li>
+      <li>JSON-RPC messages between dev tool and language server</li>
+      <li>Language server provides features like autocomplete, refactoring, etc.</li>
+    </ul>
+    <ul>
+      <li>✔ Great developer experience</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h1>Mission statement</h1>
+    <p>Enable web developers to create Linked Data applications easily, using state-of-the-art DX</p>
+  </section>
+
+  <section class="slide">
+    <h1>Querying Linked Data is hard</h1>
+    <ul>
+      <li>Linked Data inherent diversity</li>
+      <li>SPARQL query language and protocol</li>
+      <li>Data processing - parse, convert, validate</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h1>LDkit</h1>
+    <ol>
+      <li>Create data schema</li>
+      <li>Set SPARQL endpoint URL</li>
+      <li>Fetch data!</li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <h1>1. Create data schema</h1>
+    <pre>
+      <code>import { dbo, rdfs, xsd } from "ldkit/namespaces";</code>
+
+      <code>const PersonSchema = {</code>
+      <code>  "@type": dbo.Person,</code>
+      <code>  name: rdfs.label,</code>
+      <code>  abstract: dbo.abstract,</code>
+      <code>  birthDate: {</code>
+      <code>    "@id": dbo.birthDate,</code>
+      <code>    "@type": xsd.date,</code>
+      <code>  },</code>
+      <code>} as const;</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h1>2. Set SPARQL endpoint URL</h1>
+    <pre>
+      <code>TODO</code>
+
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h1>3. Fetch data!</h1>
+    <pre>
+      <code>TODO</code>
+
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h1>LDkit Features</h1>
+    <ul>
+      <li>RDF abstraction</li>
+      <li>Read and update data</li>
+      <li>Type-checked data source</li>
+      <li>Compatible with Comunica</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h1>Future plans</h1>
+    <ul>
+      <li>Public catalog of schemas</li>
+      <li>Schema and application generators</li>
+      <li>Extension of LDkit query capabilities</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h1 class="big center"><a href="https://ldkit.io">ldkit.io</a></h1>
   </section>
 
   <footer class="badge">
